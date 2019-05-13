@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { APIService } from '../services/register.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private APIService: APIService) {
+    this.APIService.getAPI();
+  }
 }
+
+const foo = 33;
+foo;

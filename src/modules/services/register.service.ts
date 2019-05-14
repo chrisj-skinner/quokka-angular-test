@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 
+// Service
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 @Injectable()
 export class APIService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   /**
    * getAPI
    */
-  public getAPI() {
-    const API = require('../../db.json');
-    return API;
+  public getAPI(): Observable<any> {
+    return this.http.get('../../db.json');
   }
 }
